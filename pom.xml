@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+
+<groupId>org.example</groupId>
+<artifactId>GebAndSpockFramework</artifactId>
+<version>1.0-SNAPSHOT</version>
+
+<dependencies>
+  <dependency>
+    <groupId>org.apache.groovy</groupId>
+    <artifactId>groovy-all</artifactId>
+    <version>4.0.14</version>
+    <type>pom</type>
+  </dependency>
+  <dependency>
+    <groupId>org.spockframework</groupId>
+    <artifactId>spock-core</artifactId>
+    <version>${spockVersion}</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.gebish</groupId>
+    <artifactId>geb-spock</artifactId>
+    <version>${gebVersion}</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.gebish</groupId>
+    <artifactId>geb-spock</artifactId>
+    <version>${gebVersion}</version>
+    <scope>compile</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-chrome-driver</artifactId>
+    <version>${seleniumVersion}</version>
+    <scope>compile</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-support</artifactId>
+    <version>${seleniumVersion}</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.gebish</groupId>
+    <artifactId>geb-core</artifactId>
+    <version>${gebVersion}</version>
+    <scope>compile</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-1.2-api</artifactId>
+    <version>${log4jVersion}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-devtools-v118</artifactId>
+    <version>4.14.0</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>${log4jVersion}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-launcher</artifactId>
+    <version>1.10.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-runner</artifactId>
+    <version>1.10.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-engine</artifactId>
+    <version>1.10.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-commons</artifactId>
+    <version>1.10.0</version>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-launcher</artifactId>
+    <version>1.9.3</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.spockframework</groupId>
+    <artifactId>spock-core</artifactId>
+    <version>${spockVersion}</version>
+    <scope>compile</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>1.7.32</version>
+  </dependency>
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-support</artifactId>
+    <version>4.11.0</version>
+    <scope>compile</scope>
+  </dependency>
+</dependencies>
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.codehaus.gmavenplus</groupId>
+      <artifactId>gmavenplus-plugin</artifactId>
+      <version>1.13.1</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>execute</goal>
+          </goals>
+        </execution>
+      </executions>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.groovy</groupId>
+          <artifactId>groovy</artifactId>
+          <version>4.0.14</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <configuration>
+        <scripts>
+          <script>src/main/groovy/Main.groovy</script>
+        </scripts>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+
+<properties>
+  <groovyVersion>4.0.15</groovyVersion>
+  <gebVersion>7.0</gebVersion>
+  <seleniumVersion>4.11.0</seleniumVersion>
+  <spockVersion>2.3-groovy-4.0</spockVersion>
+  <log4jVersion>2.21.1</log4jVersion>
+  <maven.compiler.source>11</maven.compiler.source>
+  <maven.compiler.target>11</maven.compiler.target>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+
+</project>
