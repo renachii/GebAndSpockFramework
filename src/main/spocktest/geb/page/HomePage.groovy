@@ -5,7 +5,7 @@ import spocktest.geb.module.HeaderModule
 
 class HomePage extends GebPage {
 
-	static at = {
+    static at = {
         title == 'Swag Labs'
     }
 	
@@ -21,7 +21,7 @@ class HomePage extends GebPage {
 
         navigation (wait: true) { module HeaderModule }
         tabs (wait: true) { module FooterModule }
-		//exampleModule(wait: 'slow') { $("<selector>").module(exampleModule) }
+	//exampleModule(wait: 'slow') { $("<selector>").module(exampleModule) }
 
     }
 
