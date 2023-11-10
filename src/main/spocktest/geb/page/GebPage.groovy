@@ -71,6 +71,21 @@ abstract class GebPage extends Page {
     }
 
     /**
+     * Scroll to element and click
+     *
+     * @param element
+     */
+    void scrollAndClick(element) {
+        try {
+            interact {
+                moveToElement(element)
+                element.click()
+            }
+        }
+        catch (Exception ignored){}
+    }
+
+    /**
      * Force click using javascript
      *
      * @param element
