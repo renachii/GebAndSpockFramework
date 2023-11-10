@@ -3,7 +3,12 @@ package spocktest.geb.page
 import spocktest.geb.module.FooterModule
 import spocktest.geb.module.HeaderModule
 
-class HomePage extends GebPage{
+class HomePage extends GebPage {
+
+	static at = {
+        title == 'Swag Labs'
+    }
+	
     static content = {
         inventoryItemList { $("div.inventory_list") }
         invetoryItems { $("div.inventory_item)")}
@@ -16,6 +21,8 @@ class HomePage extends GebPage{
 
         navigation (wait: true) { module HeaderModule }
         tabs (wait: true) { module FooterModule }
+		//exampleModule(wait: 'slow') { $("<selector>").module(exampleModule) }
+
     }
 
     /**
