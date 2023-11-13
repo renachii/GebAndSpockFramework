@@ -19,25 +19,4 @@ class LoginPage extends GebPage {
         passwordField (required: true, wait: true) { $("#password") }
         loginButton (wait: true) { $("#login-button") }
     }
-
-    /**
-     * wait for login
-     */
-    void waitForLogin() {
-        waitForElementToBeDisplayed(loginButton)
-    }
-
-    /**
-     * login
-     *
-     * @param user
-     * @param pass
-     */
-    void login(String user, String pass) {
-        if (isElementDisplayed(loginButton)) {
-            usernameField.value(user)
-            passwordField.value(pass)
-            loginButton.click()
-        }
-    }
 }

@@ -12,7 +12,6 @@ import org.openqa.selenium.*;
  */
 @Log4j
 abstract class GebPage extends Page {
-    WebDriver driver = getDriver()
 
     /**
      * WaitFor the element to be displayed
@@ -92,7 +91,7 @@ abstract class GebPage extends Page {
      */
     void forceClick(element) {
         try {
-            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            JavascriptExecutor executor = (JavascriptExecutor)browser;
             executor.executeScript("arguments[0].click();", element)
         }
         catch (ignored) {}

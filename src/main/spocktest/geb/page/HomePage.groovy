@@ -21,45 +21,7 @@ class HomePage extends GebPage {
 
         navigation (wait: true) { module HeaderModule }
         tabs (wait: true) { module FooterModule }
-	//exampleModule(wait: 'slow') { $("<selector>").module(exampleModule) }
-
-    }
-
-    /**
-     * logout
-     */
-    void logout() {
-        if (isElementDisplayed(navigation.burgerButton)) {
-            navigation.burgerButton.click()
-            waitForElementToBeDisplayed(navigation.logoutButton)
-            navigation.logoutButton.click()
-        }
-    }
-
-    /**
-     * wait for home
-     */
-    void waitForHome() {
-        waitForElementToBeDisplayed(inventoryItemList)
-    }
-
-    /**
-     * Get items in cart
-     * @return number
-     */
-    int getItemsInCart() {
-        scrollToElement(navigation.cartBadge)
-        return Integer.parseInt(navigation.cartBadge.text())
-    }
-
-
-    /**
-     * Add to cart
-     * @param itemNo
-     */
-    void addToCart(int itemNo) {
-        scrollToElement(invetoryItem(itemNo))
-        addToCartButton(itemNo).click()
+	    //exampleModule(wait: 'slow') { $("<selector>").module(exampleModule) }
     }
 }
 

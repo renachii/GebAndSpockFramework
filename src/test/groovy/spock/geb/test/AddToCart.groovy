@@ -15,16 +15,17 @@ class AddToCart extends SetupSpec {
         given: "go to website"
 
         to loginPage
-        loginPage.login(user, pass)
+        login(user, pass)
         log.info("")
 
         when: "add to cart"
         page homePage
-        homePage.addToCart(5)
+        homePage.scrollToElement(homePage.invetoryItem(5))
+        homePage.addToCartButton(5).click()
         log.info("")
 
         then: ""
-        int number = homePage.getItemsInCart()
+        int number = homePage.navigation.getItemsInCart()
         assert number == 1: "numbers in cart is incorrect"
         assert genericTask.generateRandomString(10).length() == 10
         log.info("")

@@ -44,11 +44,25 @@ class SetupSpec extends GebSpec {
     }
 
     def cleanup() {
-        homePage.logout()
+        homePage.navigation.logout()
         log.info("Run after each")
     }
 
     def cleanupSpec() {
         log.info("Run after all")
+    }
+
+    /**
+     * login
+     *
+     * @param user
+     * @param pass
+     */
+    void login(String user, String pass) {
+        if (loginPage.isElementDisplayed(loginPage.loginButton)) {
+            loginPage.usernameField.value(user)
+            loginPage.passwordField.value(pass)
+            loginPage.loginButton.click()
+        }
     }
 }

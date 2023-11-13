@@ -1,13 +1,11 @@
 package spocktest.geb.module
 
-import geb.Module
-
 /**
  * Module class for the header elements
  *
  * @author: Renalyn Arguelles
  */
-class HeaderModule extends Module {
+class HeaderModule extends GebModule {
     static content = {
         title { $("div.login_logo") }
 
@@ -19,5 +17,25 @@ class HeaderModule extends Module {
 
         shoppingCartLink { $("a.shopping_cart_link") }
         cartBadge { $("span.shopping_cart_badge") }
+    }
+
+    /**
+     * Get items in cart
+     * @return number
+     */
+    int getItemsInCart() {
+        scrollToElement(cartBadge)
+        return Integer.parseInt(cartBadge.text())
+    }
+
+    /**
+     * logout
+     */
+    void logout() {
+        if (isElementDisplayed(burgerButton)) {
+            burgerButton.click()
+            waitForElementToBeDisplayed(logoutButton)
+            logoutButton.click()
+        }
     }
 }

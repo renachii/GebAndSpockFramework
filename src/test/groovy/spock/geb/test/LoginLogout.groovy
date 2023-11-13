@@ -24,7 +24,7 @@ class LoginLogout extends SetupSpec {
 
         then: "home page is accessed"
         page homePage
-        homePage.waitForHome()
+        homePage.waitForElementToBeDisplayed(homePage.inventoryItemList)
         boolean result = homePage.inventoryItemList.isDisplayed()
         assert result == true: "Home page is not accessed"
 
